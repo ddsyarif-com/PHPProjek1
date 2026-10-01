@@ -1,0 +1,9 @@
+# Lapisan keamanan tambahan untuk folder uploads/
+# Mencegah file apapun di folder ini dieksekusi sebagai script,
+# meskipun somehow ada file berbahaya yang lolos ke sini.
+
+<FilesMatch "\.(php|php3|php4|php5|php7|phtml|pl|py|jsp|asp|sh|cgi)$">
+  Require all denied
+</FilesMatch>
+
+php_flag engine off
